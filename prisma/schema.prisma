@@ -1,0 +1,25 @@
+// Schema Prisma untuk aplikasi review film dan series
+// Dokumentasi: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Review {
+  id             Int      @id @default(autoincrement())
+  judul          String
+  tipe           String
+  genre          String
+  rating         Float
+  ulasan         String
+  tanggal_nonton DateTime @db.Date
+  poster         String   @default("")
+
+  @@map("reviews")
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Watchlist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="side">
+    <h1 class="logo"><img src="images/icon-movie.png" alt="" width="40" height="40"> My Watchlist</h1>
+
+    <h2>Ringkasan</h2>
+    <div class="ring">
+      <p>✮ Total film: <b id="sFilm">0</b></p>
+      <p>✮ Total series: <b id="sSeries">0</b></p>
+      <p>✮ Rata-rata: <b id="sRata">-</b></p>
+    </div>
+
+    <h2>Tipe</h2>
+    <div class="tipe" id="tipe">
+      <button class="on" data-v="">Semua</button>
+      <button data-v="film">Film</button>
+      <button data-v="series">Series</button>
+    </div>
+
+    <h2>Genre</h2>
+    <div class="chips" id="genre"></div>
+
+    <p class="foot">Made your own watchlist &lt;3</p>
+  </aside>
+
+  <div class="konten">
+    <header class="top">
+      <label class="cari">
+        <img src="images/icon-search.png" alt="" width="24" height="24">
+        <input id="q" type="search" placeholder="Cari judul film atau series...">
+      </label>
+      <div class="sel">
+        <img class="ic" src="images/icon-sort.png" alt="" width="20" height="20">
+        <select id="urut" aria-label="Urutkan">
+          <option value="" selected hidden>Urut Berdasarkan</option>
+          <option value="terbaru">Terbaru ditonton</option>
+          <option value="rating">Rating tertinggi</option>
+          <option value="judul">Judul A-Z</option>
+        </select>
+      </div>
+      <button class="btn" id="tulis"><img src="images/icon-comment-add.png" alt="" width="20" height="20"> Tulis Ulasan</button>
+    </header>
+
+    <main id="daftar" class="grid"></main>
+    <p id="kosong" class="kosong" hidden>Yahh belum ada review yang kamu buat :(. Klik “Tulis Ulasan” untuk menambahkan review.</p>
+  </div>
+
+  <div class="ov" id="ovDetail" hidden>
+    <div class="detail" id="detail"></div>
+  </div>
+
+  <div class="ov" id="ovForm" hidden>
+    <form class="drawer" id="form" novalidate>
+      <div class="dh">
+        <h2 id="fJudul">Tulis Ulasan</h2>
+        <button type="button" class="x" data-tutup aria-label="Tutup">✕</button>
+      </div>
+      <label>Judul <input name="judul" maxlength="100" required></label>
+      <div class="dua">
+        <label>Tipe
+          <select name="tipe"><option value="film">Film</option><option value="series">Series</option></select>
+        </label>
+        <label>Genre <select name="genre" id="fGenre"></select></label>
+      </div>
+      <div class="f">Rating <div class="rate" id="rate"></div></div>
+      <label>Ulasan <textarea name="ulasan" rows="4" maxlength="300" required></textarea></label>
+      <label>Tanggal nonton <input type="date" name="tanggal_nonton" required></label>
+      <label>URL poster (opsional) <input type="url" name="poster" placeholder="https://..."></label>
+      <p class="err" id="err" role="alert"></p>
+      <div class="aksi">
+        <button type="button" class="btn2" data-tutup>Batal</button>
+        <button type="submit" class="btn">Simpan</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
