@@ -107,7 +107,7 @@ Jalankan backend menggunakan:
 npm run dev
 ```
 
-Kemudian buka melalui browser atau extension.
+Kemudian buka frontend melalui browser atau extension.
 
 ## API 
 
@@ -122,15 +122,19 @@ Kemudian buka melalui browser atau extension.
 ## Screenshots
 
 - Homepage
+  
 ![homepage](assets/tampilan-website.png)
 
 - Tulis Ulasan
+  
 ![Tulis Ulasan](assets/add-new-review-website.png)
 
 - Edit Ulasan
+  
 ![Edit ulasan](assets/edit-review-website.png)
 
 - Hapus Ulasan 
+  
 ![Hapus ulasan](assets/delete-review-website.png)
 
 - Filter
